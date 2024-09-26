@@ -15,16 +15,12 @@ import androidx.fragment.app.DialogFragment;
 
 public class AddDialog extends DialogFragment {
 
-    //interface för lyssnare till dialogen
     public interface AddDialogListener {
         void onDialogPositiveClick(String name, String url);
     }
 
     private AddDialogListener listener;
 
-    //metoden för när dialogen skapas, använder en egengjord layout,
-    //så att användaren kan skriva in namn på video + url som sedan skickas med med
-    //lyssnaren.
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -56,7 +52,6 @@ public class AddDialog extends DialogFragment {
         return dialog;
     }
 
-    //onAttach ser till att lyssnaren kopplas till fragmentet/aktiviteten som skapar dialogen.
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

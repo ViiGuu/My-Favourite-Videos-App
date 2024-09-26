@@ -15,15 +15,12 @@ import androidx.fragment.app.DialogFragment;
 
 public class ShareDialog extends DialogFragment {
 
-    //interface för lyssnaren till dialogen
     public interface ShareDialogListener {
         void onDialogPositiveClick(String email);
     }
 
     private ShareDialogListener listener;
 
-    //metoden för när dialogen skapas, använder en egengjord xml-layout så
-    //att användaren kan fylla i email adress till vem videon ska delas till.
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -54,7 +51,6 @@ public class ShareDialog extends DialogFragment {
         return dialog;
     }
 
-    //onAttach ser till att lyssnaren kopplas till fragmentet/aktiviteten som skapar dialogen.
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

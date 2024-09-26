@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
 
     }
 
-    //initierar alla instansvariabler
     private void initializeFields(){
         addButton = findViewById(R.id.buttonAdd);
         shareButton = findViewById(R.id.buttonShare);
@@ -81,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
                 videosList);
     }
 
-    //diverse klickhanterare för knappar och listview
     private void setClickListeners(){
         addButton.setOnClickListener(view -> {
             AddDialog addDialog = new AddDialog();
@@ -120,8 +118,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
         });
     }
 
-    //sätter upp en ConnectivityManager och sätter upp funktionalitet för att registrera nätverket via
-    //en NetworkRequest, så att användaren meddelas när nätverket är uppe eller nere.
     private void setUpConnectivityManager(){
         connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() {
@@ -144,8 +140,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
         connectivityManager.registerNetworkCallback(request, networkCallback);
     }
 
-    //återanvänd metod från 4.1.1, som helt enkelt spelar upp
-    //en youtube-video via en intent
     private void playVideo(String url) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
@@ -155,7 +149,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
         }
     }
 
-    //återanvänd hjälpmetod från 7.3.1, som berättar om nätverket är uppe eller nere.
     public void showNetworkInfo(Boolean networkIsUp) {
         if(networkIsUp)
             Toast.makeText(this, "Network is up", Toast.LENGTH_SHORT).show();
@@ -163,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
             Toast.makeText(this, "Network is down", Toast.LENGTH_SHORT).show();
     }
 
-    //metod för lyssnaren i DeleteDialog, tar bort en vald video och gör en vibration
     @Override
     public void onDialogPositiveClick() {
         if (selectedVideo != null && videosList.contains(selectedVideo)) {
@@ -176,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
         }
     }
 
-    //lyssnaren för AddDialog, lägger till en ny video.
     @Override
     public void onDialogPositiveClick(String name, String url) {
         Video video = new Video(name, url);
@@ -185,7 +176,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
         Toast.makeText(this, video + " added as a favourite video", Toast.LENGTH_SHORT).show();
     }
 
-    //lyssnaren för ShareDialog, delar genom intent en video via epost med förinställt meddelande.
     @Override
     public void onDialogPositiveClick(String email){
         Intent intent = new Intent(Intent.ACTION_SEND);
@@ -200,7 +190,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialog.Dele
         }
     }
 
-    //simpel inre klass för att hantera video-objekt.
     private class Video {
         String name;
         String url;
