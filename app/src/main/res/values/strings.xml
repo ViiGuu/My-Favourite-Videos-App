@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">9</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="saved_videos">Saved videos</string>
+    <string name="app_title">My Favourite Videos App</string>
+    <string name="share">Share</string>
+    <string name="back">Back</string>
+    <string name="press_title_to_delete">Press title to delete</string>
+    <string name="no_video_selected">No Video Selected</string>
+    <string name="add_video">Add Video</string>
+    <string name="cancel">Cancel</string>
+    <string name="video_name">Video Name</string>
+    <string name="video_url">Video URL</string>
+    <string name="email_adress">Email Adress</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="share_video">Share Video</string>
+    <string name="send_the_video_to_who">Send the video to who?</string>
+    <string name="which_video_to_add">Which Video To Add?</string>
+</resources>
